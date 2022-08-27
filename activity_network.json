@@ -1,0 +1,133 @@
+{
+    "START": {
+        "name": "START",
+        "length": 0,
+        "dependencies": [],
+        "earliest_start": 0,
+        "earliest_completion": 0,
+        "latest_start": 0,
+        "latest_completion": 0,
+        "float_time": 0,
+        "critical": true
+    },
+    "END": {
+        "name": "END",
+        "length": 0,
+        "dependencies": [
+            "H"
+        ],
+        "earliest_start": 16,
+        "earliest_completion": 16,
+        "latest_start": 16,
+        "latest_completion": 16,
+        "float_time": 0,
+        "critical": true
+    },
+    "A": {
+        "name": "A",
+        "length": 3,
+        "dependencies": [
+            "START"
+        ],
+        "earliest_start": 0,
+        "earliest_completion": 3,
+        "latest_start": 0,
+        "latest_completion": 3,
+        "float_time": 0,
+        "critical": true
+    },
+    "B": {
+        "name": "B",
+        "length": 5,
+        "dependencies": [
+            "START"
+        ],
+        "earliest_start": 0,
+        "earliest_completion": 5,
+        "latest_start": 1,
+        "latest_completion": 6,
+        "float_time": 1,
+        "critical": false
+    },
+    "C": {
+        "name": "C",
+        "length": 2,
+        "dependencies": [
+            "A"
+        ],
+        "earliest_start": 3,
+        "earliest_completion": 5,
+        "latest_start": 7,
+        "latest_completion": 9,
+        "float_time": 4,
+        "critical": false
+    },
+    "D": {
+        "name": "D",
+        "length": 3,
+        "dependencies": [
+            "A"
+        ],
+        "earliest_start": 3,
+        "earliest_completion": 6,
+        "latest_start": 3,
+        "latest_completion": 6,
+        "float_time": 0,
+        "critical": true
+    },
+    "E": {
+        "name": "E",
+        "length": 3,
+        "dependencies": [
+            "B",
+            "D"
+        ],
+        "earliest_start": 6,
+        "earliest_completion": 9,
+        "latest_start": 6,
+        "latest_completion": 9,
+        "float_time": 0,
+        "critical": true
+    },
+    "F": {
+        "name": "F",
+        "length": 5,
+        "dependencies": [
+            "C",
+            "E"
+        ],
+        "earliest_start": 9,
+        "earliest_completion": 14,
+        "latest_start": 9,
+        "latest_completion": 14,
+        "float_time": 0,
+        "critical": true
+    },
+    "G": {
+        "name": "G",
+        "length": 1,
+        "dependencies": [
+            "C"
+        ],
+        "earliest_start": 5,
+        "earliest_completion": 6,
+        "latest_start": 13,
+        "latest_completion": 14,
+        "float_time": 8,
+        "critical": false
+    },
+    "H": {
+        "name": "H",
+        "length": 2,
+        "dependencies": [
+            "F",
+            "G"
+        ],
+        "earliest_start": 14,
+        "earliest_completion": 16,
+        "latest_start": 14,
+        "latest_completion": 16,
+        "float_time": 0,
+        "critical": true
+    }
+}
