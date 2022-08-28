@@ -1,10 +1,10 @@
 import React from 'react';
-import Pricing from './pricing';
+import VisaFlow from './visaflow';
 
 const App = () => {
 
     return (
-        Pricing()
+        VisaFlow()
     )
 }
 

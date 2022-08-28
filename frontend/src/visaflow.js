@@ -106,7 +106,7 @@ const tiers = [
   },
 ];
 
-function PricingContent() {
+function VisaFlowContent() {
   return (
     <React.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
@@ -219,6 +219,6 @@ function PricingContent() {
   );
 }
 
-export default function Pricing() {
-  return <PricingContent />;
+export default function VisaFlow() {
+  return <VisaFlowContent />;
 }

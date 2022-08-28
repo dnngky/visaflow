@@ -5,8 +5,6 @@ import json
 if __name__ == '__main__':
 
     tasks = {}
-    tasks['START'] = Task('START', 0)
-    tasks['END'] = Task('END', 0)
 
     while True:
         try:
@@ -37,16 +35,6 @@ if __name__ == '__main__':
             j.visited = False
         if has_visited(i, i):
             raise TaskCycleException("Task dependencies form a loop")
-
-    for a in tasks.values():
-        if a.name in ('START', 'END'):
-            continue
-        if len(a.precessions) == 0:
-            a.depends_on(tasks['START'])
-            tasks['START'].dependant_on(a)
-        if len(a.successions) == 0:
-            tasks['END'].depends_on(a)
-            a.dependant_on(tasks['END'])
     
     task_json = {}
     for tk in tasks.values():
