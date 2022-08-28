@@ -1,0 +1,3 @@
+change_lightbulb 5 buy_lightbulb buy_stepladder
+buy_lightbulb 10 _
+buy_stepladder 3 _
