@@ -16,10 +16,10 @@ class Task:
         return self.name
 
     def depends_on(self, precession):
-        self.precessions.extend(precession)
+        self.precessions.append(precession)
 
     def dependant_on(self, succession):
-        self.successions.extend(succession)
+        self.successions.append(succession)
 
     def earliest_start(self):
         return self.earliest_completion() - self.length
@@ -42,9 +42,9 @@ class Task:
         return self.float_time() == 0
 
     def drag_time(self, tasks):
-        n1 = max(map(lambda x: x.earliest_completion(), tasks))
+        n1 = max(map(lambda x: x.earliest_completion(), tasks.values()))
         length = self.length
         self.length = 0
-        n2 = max(map(lambda x: x.earliest_completion(), tasks))
+        n2 = max(map(lambda x: x.earliest_completion(), tasks.values()))
         self.length = length
         return n1 - n2

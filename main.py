@@ -20,37 +20,33 @@ if __name__ == '__main__':
 
         if d == ['_']:
             d = []
-        if a in tasks.keys():
-            activity = tasks[a]
+        if a not in tasks.keys():
+            tasks[a] = Task(a, int(t))
         else:
-            activity = Task(a, int(t))
+            tasks[a].length = int(t)
         
         dependencies = []
         for b in d:
-            try:
-                dependencies.append(tasks[b])
-                tasks[b].dependant_on([activity])
-            except KeyError:
-                print(f"Activity {b} does not exist.")
+            if b not in tasks.keys():
+                tasks[b] = Task(b, 0)
+            tasks[a].depends_on(tasks[b])
+            tasks[b].dependant_on(tasks[a])
 
-        activity.depends_on(dependencies)
-        tasks[a] = activity
+    for i in tasks.values():
+        for j in tasks.values():
+            j.visited = False
+        if has_visited(i, i):
+            raise TaskCycleException("Task dependencies form a loop")
 
     for a in tasks.values():
         if a.name in ('START', 'END'):
             continue
         if len(a.precessions) == 0:
-            a.depends_on([tasks['START']])
-            tasks['START'].dependant_on([a])
+            a.depends_on(tasks['START'])
+            tasks['START'].dependant_on(a)
         if len(a.successions) == 0:
-            tasks['END'].depends_on([a])
-            a.dependant_on([tasks['END']])
-    
-    for i in tasks.values():
-        for j in tasks.values():
-            j.visited = False
-        if has_visited(i, i):
-            raise TaskCycleException("Tasks dependencies form a loop")
+            tasks['END'].depends_on(a)
+            a.dependant_on(tasks['END'])
     
     task_json = {}
     for tk in tasks.values():
@@ -63,6 +59,7 @@ if __name__ == '__main__':
             "latest_start": tk.latest_start(),
             "latest_completion": tk.latest_completion(),
             "float_time": tk.float_time(),
+            "drag_time": tk.drag_time(tasks),
             "critical": tk.is_critical()
         }
         task_json[tk.name] = task_info

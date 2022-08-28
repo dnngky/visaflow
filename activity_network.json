@@ -8,126 +8,136 @@
         "latest_start": 0,
         "latest_completion": 0,
         "float_time": 0,
+        "drag_time": 0,
         "critical": true
     },
     "END": {
         "name": "END",
         "length": 0,
         "dependencies": [
-            "H"
+            "E"
         ],
-        "earliest_start": 16,
-        "earliest_completion": 16,
-        "latest_start": 16,
-        "latest_completion": 16,
+        "earliest_start": 65,
+        "earliest_completion": 65,
+        "latest_start": 65,
+        "latest_completion": 65,
         "float_time": 0,
+        "drag_time": 0,
         "critical": true
     },
     "A": {
         "name": "A",
-        "length": 3,
+        "length": 10,
         "dependencies": [
             "START"
         ],
         "earliest_start": 0,
-        "earliest_completion": 3,
+        "earliest_completion": 10,
         "latest_start": 0,
-        "latest_completion": 3,
+        "latest_completion": 10,
         "float_time": 0,
-        "critical": true
-    },
-    "B": {
-        "name": "B",
-        "length": 5,
-        "dependencies": [
-            "START"
-        ],
-        "earliest_start": 0,
-        "earliest_completion": 5,
-        "latest_start": 1,
-        "latest_completion": 6,
-        "float_time": 1,
-        "critical": false
-    },
-    "C": {
-        "name": "C",
-        "length": 2,
-        "dependencies": [
-            "A"
-        ],
-        "earliest_start": 3,
-        "earliest_completion": 5,
-        "latest_start": 7,
-        "latest_completion": 9,
-        "float_time": 4,
-        "critical": false
-    },
-    "D": {
-        "name": "D",
-        "length": 3,
-        "dependencies": [
-            "A"
-        ],
-        "earliest_start": 3,
-        "earliest_completion": 6,
-        "latest_start": 3,
-        "latest_completion": 6,
-        "float_time": 0,
-        "critical": true
-    },
-    "E": {
-        "name": "E",
-        "length": 3,
-        "dependencies": [
-            "B",
-            "D"
-        ],
-        "earliest_start": 6,
-        "earliest_completion": 9,
-        "latest_start": 6,
-        "latest_completion": 9,
-        "float_time": 0,
+        "drag_time": 10,
         "critical": true
     },
     "F": {
         "name": "F",
+        "length": 15,
+        "dependencies": [
+            "A"
+        ],
+        "earliest_start": 10,
+        "earliest_completion": 25,
+        "latest_start": 25,
+        "latest_completion": 40,
+        "float_time": 15,
+        "drag_time": 0,
+        "critical": false
+    },
+    "B": {
+        "name": "B",
+        "length": 20,
+        "dependencies": [
+            "A"
+        ],
+        "earliest_start": 10,
+        "earliest_completion": 30,
+        "latest_start": 10,
+        "latest_completion": 30,
+        "float_time": 0,
+        "drag_time": 15,
+        "critical": true
+    },
+    "H": {
+        "name": "H",
+        "length": 15,
+        "dependencies": [
+            "A"
+        ],
+        "earliest_start": 10,
+        "earliest_completion": 25,
+        "latest_start": 30,
+        "latest_completion": 45,
+        "float_time": 20,
+        "drag_time": 0,
+        "critical": false
+    },
+    "C": {
+        "name": "C",
         "length": 5,
         "dependencies": [
-            "C",
-            "E"
+            "B"
         ],
-        "earliest_start": 9,
-        "earliest_completion": 14,
-        "latest_start": 9,
-        "latest_completion": 14,
+        "earliest_start": 30,
+        "earliest_completion": 35,
+        "latest_start": 30,
+        "latest_completion": 35,
         "float_time": 0,
+        "drag_time": 5,
         "critical": true
     },
     "G": {
         "name": "G",
-        "length": 1,
+        "length": 5,
+        "dependencies": [
+            "C",
+            "F"
+        ],
+        "earliest_start": 35,
+        "earliest_completion": 40,
+        "latest_start": 40,
+        "latest_completion": 45,
+        "float_time": 5,
+        "drag_time": 0,
+        "critical": false
+    },
+    "D": {
+        "name": "D",
+        "length": 10,
         "dependencies": [
             "C"
         ],
-        "earliest_start": 5,
-        "earliest_completion": 6,
-        "latest_start": 13,
-        "latest_completion": 14,
-        "float_time": 8,
-        "critical": false
-    },
-    "H": {
-        "name": "H",
-        "length": 2,
-        "dependencies": [
-            "F",
-            "G"
-        ],
-        "earliest_start": 14,
-        "earliest_completion": 16,
-        "latest_start": 14,
-        "latest_completion": 16,
+        "earliest_start": 35,
+        "earliest_completion": 45,
+        "latest_start": 35,
+        "latest_completion": 45,
         "float_time": 0,
+        "drag_time": 5,
+        "critical": true
+    },
+    "E": {
+        "name": "E",
+        "length": 20,
+        "dependencies": [
+            "D",
+            "G",
+            "H"
+        ],
+        "earliest_start": 45,
+        "earliest_completion": 65,
+        "latest_start": 45,
+        "latest_completion": 65,
+        "float_time": 0,
+        "drag_time": 20,
         "critical": true
     }
 }
