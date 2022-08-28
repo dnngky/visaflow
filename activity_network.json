@@ -1,30 +1,4 @@
 {
-    "START": {
-        "name": "START",
-        "length": 0,
-        "dependencies": [],
-        "earliest_start": 0,
-        "earliest_completion": 0,
-        "latest_start": 0,
-        "latest_completion": 0,
-        "float_time": 0,
-        "drag_time": 0,
-        "critical": true
-    },
-    "END": {
-        "name": "END",
-        "length": 0,
-        "dependencies": [
-            "E"
-        ],
-        "earliest_start": 65,
-        "earliest_completion": 65,
-        "latest_start": 65,
-        "latest_completion": 65,
-        "float_time": 0,
-        "drag_time": 0,
-        "critical": true
-    },
     "A": {
         "name": "A",
         "length": 10,

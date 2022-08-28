@@ -30,18 +30,6 @@ function Copyright(props) {
 
 const tiers = [
   {
-    title: 'Task F',
-    length: '15',
-    description: [
-      'Dependencies: A',
-      'Earliest time frame: 10-25',
-      'Latest time frame: 25-40',
-      'Float time: 15'
-    ],
-    buttonText: 'Mark as completed',
-    buttonVariant: 'outlined',
-  },
-  {
     title: 'Task A',
     subheader: 'CRITICAL',
     length: '10',
@@ -53,6 +41,56 @@ const tiers = [
     ],
     buttonText: 'Mark as completed',
     buttonVariant: 'contained',
+  },
+  {
+    title: 'Task B',
+    subheader: 'CRITICAL',
+    length: '20',
+    description: [
+      'Dependencies: A',
+      'Earliest time frame: 10-30',
+      'Latest time frame: 10-30',
+      'Float time: 0',
+    ],
+    buttonText: 'Mark as completed',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Task C',
+    subheader: 'CRITICAL',
+    length: '5',
+    description: [
+      'Dependencies: A',
+      'Earliest time frame: 30-35',
+      'Latest time frame: 30-35',
+      'Float time: 0',
+    ],
+    buttonText: 'Mark as completed',
+    buttonVariant: 'contained',
+  },
+  {
+    title: 'Task E',
+    length: '20',
+    description: [
+      'Dependencies: D, G, H',
+      'Earliest time frame: 45-65',
+      'Latest time frame: 45-65',
+      'Float time: 20'
+    ],
+    buttonText: 'Mark as completed',
+    buttonVariant: 'outlined',
+  },
+  {
+    title: 'Task F',
+    length: '15',
+    description: [
+      'Dependencies: A',
+      'Earliest time frame: 10-25',
+      'Latest time frame: 25-40',
+      'Float time: 15'
+    ],
+    buttonText: 'Mark as completed',
+    buttonVariant: 'outlined',
   },
   {
     title: 'Task G',
@@ -114,7 +152,7 @@ function PricingContent() {
                   title={tier.title}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={tier.subheader === 'CRITICAL' ? <StarIcon /> : null}
                   subheaderTypographyProps={{
                     align: 'center',
                   }}
